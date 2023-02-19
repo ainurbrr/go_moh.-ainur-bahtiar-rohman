@@ -1,4 +1,4 @@
-## Resume Introduction to Algorithm and Golang
+## (4) Introduction to Algorithm and Golang
 
 1. Mempelajari Pengertian dan Karakteristik Algoritma 
 algoritma adalah prosedur komputasi yang didefinisikan dengan baik yang mengambil beberapa nilai sebagai input dan menghasilkan beberapa nilai sebagai output.
