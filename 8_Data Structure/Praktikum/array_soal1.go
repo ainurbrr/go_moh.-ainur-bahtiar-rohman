@@ -3,13 +3,29 @@ package main
 import "fmt"
 
 func ArrayMerge(arrayA, arrayB []string) []string {
-	// your code here
+	result := []string{}
+	
+	checker := make(map[string]bool)
+
+	for _, element := range arrayA {
+		checker[element] = true
+	}
+
+	for _, element := range arrayB {
+		checker[element] = true
+	}
+
+	for element := range checker {
+		result = append(result,element)
+	}
+
+	return result
 }
 
 func main() {
 	//test cases
 	fmt.Println(ArrayMerge([]string{"king", "devil jin", "akuma"}, []string{"eddie", "steve", "geese"}))
-	//{"king", "devil jin", "akuma", "eddie", "steve", "geese}
+	//{"king", "devil jin", "akuma", "eddie", "steve", "geese"}
 
 	fmt.Println(ArrayMerge([]string{"sergie", "jin"}, []string{"jin", "steve", "bryan"}))
 	//{"sergie", "jin", "steve", "bryan"}
