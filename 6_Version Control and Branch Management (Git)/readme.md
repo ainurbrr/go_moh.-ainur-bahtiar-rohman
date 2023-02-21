@@ -1,10 +1,21 @@
-## Resume Introduction to Algorithm and Golang
+## (6) Versioning Control and Branch Management (Git)
 
-1. Mempelajari Pengertian dan Karakteristik Algoritma 
-algoritma adalah prosedur komputasi yang didefinisikan dengan baik yang mengambil beberapa nilai sebagai input dan menghasilkan beberapa nilai sebagai output.
+1. Version Control System dan git 
+Git adalah satu version control system populer yang digunakan para developer untuk mengembanagkan software secara bersama sam
+git dapat mencatat perubahan yang ada pada repository
+ada beberapa tahap untuk mengupload file di local ke server git yaitu staging area yaitu 
+- git add ... "untuk menambahkan file ke staging area"
+- git commit ... "untuk menghubungkan file di staging area ke repository github"
+- git push ... "untuk mengupload file setelah dicommit ke repository github"
+.gitignore untuk mendeklarasikan file-file yang tidak diupload ke git repository
 
-2. Mempelajari apa itu pseudocode
-yaitu bahasa terstruktur yang dimengerti manusia untuk mendeskripsikan suatu algoritma.
+2. Branching & Pull request
+Branch yaitu cabang repository yang digunakan untuk melakukan perubahan" ataupun menambahkan fitur sebagai tempat testing ataupun development sebelum di upload ke master
+Pull request yaitu cara untuk meminta pembaharuan dari suatu branch ke branch lain
 
-3. Mempelajari apa itu Flowchart
-yaitu suatu diagram dengan simbol tertentu yang menggambarkan urutan dan hubungan antar proses algoritma secara mendetail.
+3. Workflow collaboration
+cara melakukan workflow yang baik yaitu :
+- Jadikan branch master jarang dirubah ataupun di ganggu
+- Hindari mengedit langsung di branch utama ataupun bersama
+- Aplikasikan fitur baru hanya ke branch development untuk di test bersama
+- Aplikasikan branch development ke branch master jika semua sudah selesai
