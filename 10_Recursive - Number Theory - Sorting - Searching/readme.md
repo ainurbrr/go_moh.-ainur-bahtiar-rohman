@@ -1,10 +1,25 @@
-## Resume Introduction to Algorithm and Golang
+## (10) Recursive - Number Theory - Sorting - Searching
+1. Recursive 
+Recursive adalah keadaan di mana fungsi memecahkan masalah dengan memanggil dirinya sendiri secara berulang kali
+recursive dapat mempercepat untuk segara menemukan jawaban secara lebih cepat.
 
-1. Mempelajari Pengertian dan Karakteristik Algoritma 
-algoritma adalah prosedur komputasi yang didefinisikan dengan baik yang mengambil beberapa nilai sebagai input dan menghasilkan beberapa nilai sebagai output.
+2. Number Theory
+Number theory adalah cabang matematika yang mempelajari tentang perhitungan bilangan
+*Contoh number Theoory:
+- Factorial
+- Prime number
+- Gratest Common Divisor dll.
 
-2. Mempelajari apa itu pseudocode
-yaitu bahasa terstruktur yang dimengerti manusia untuk mendeskripsikan suatu algoritma.
+3. Searching
+Searching adalah proses menemukan posisi nilai yang diberikan untuk dicari dan ditemukan
+*Jenis-jenis searching :
+- Linear search
+- bisa juga menggunakan package
 
-3. Mempelajari apa itu Flowchart
-yaitu suatu diagram dengan simbol tertentu yang menggambarkan urutan dan hubungan antar proses algoritma secara mendetail.
+4. Sorting
+Sorting adalah roses megurutkan dan menyusun data dalam urutan tertentu
+*Jenis-jenis sorting :
+- Selection sort
+- Counting sort
+- Merge sort
+- Sorting juga bisa menggunakan package
