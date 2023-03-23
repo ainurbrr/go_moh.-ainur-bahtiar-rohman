@@ -20,7 +20,7 @@ INSERT INTO product_types(name) VALUES
 INSERT INTO products(product_type_id, operator_id, code, name, status) VALUES
 (1, 3, 'MNM001', 'RedBull', 0),
 (1, 3, 'MNM004', 'Kratingdeng', 1);
- 
+
 -- 4. Insert 3 product dengan product type id = 2, dan operators id = 1.
 
 INSERT INTO products(product_type_id, operator_id, code, name, status) VALUES
