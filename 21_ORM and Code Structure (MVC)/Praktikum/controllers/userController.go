@@ -31,15 +31,18 @@ func GetUserController(c echo.Context) error {
 		return err
 	}
 	// your solution here
-	var users []models.User
+	var user []models.User
+	if err := config.DB.First(&user, UserId).Error; err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
 
-	if err := config.DB.First(&users, UserId).Error; err != nil {
+	if err := config.DB.Preload("Blog").Find(&user, UserId).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
 	return c.JSON(http.StatusOK, map[string]interface{}{
-		"message": "success get users by id",
-		"users":   users,
+		"message": "success get user by id",
+		"user":    user,
 	})
 
 }

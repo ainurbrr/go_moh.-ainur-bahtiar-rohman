@@ -31,22 +31,25 @@ func GetBlogController(c echo.Context) error {
 		return err
 	}
 	// your solution here
-	var blogs []models.Blog
+	blogs := models.Blog{}
 	var user []models.User
 
 	if err := config.DB.First(&blogs, BlogId).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
-	if err := config.DB.Preload("Blog").Find(&user).Error; err != nil {
+
+	if err := config.DB.Find(&user, blogs.UserID).Error; err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
+	// if err := config.DB.Preload("Blog").Find(&user, blogs.UserID).Error; err != nil {
+	// 	return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	// }
+
 	return c.JSON(http.StatusOK, map[string]interface{}{
 		"message": "success get blog by id",
-		"blog":   blogs,
-		"witer": user,
-
-
+		"blog":    blogs,
+		"writer":  user,
 	})
 
 }
