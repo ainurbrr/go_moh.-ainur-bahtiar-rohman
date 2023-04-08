@@ -7,6 +7,8 @@ import (
 
 	"github.com/labstack/echo/v4"
 	mid "github.com/labstack/echo/v4/middleware"
+	m "github.com/labstack/echo-jwt"
+
 )
 
 func New() *echo.Echo {
@@ -16,15 +18,15 @@ func New() *echo.Echo {
 	e.Pre(mid.RemoveTrailingSlash())
 
 	eUsersJwt := e.Group("/users")
-	eUsersJwt.GET("", controllers.GetUsersController, mid.JWT([]byte(constants.SECRET_JWT)))
-	eUsersJwt.GET("/:id", controllers.GetUserController, mid.JWT([]byte(constants.SECRET_JWT)))
+	eUsersJwt.GET("", controllers.GetUsersController, m.JWT([]byte(constants.SECRET_JWT)))
+	eUsersJwt.GET("/:id", controllers.GetUserController, m.JWT([]byte(constants.SECRET_JWT)))
 	eUsersJwt.POST("", controllers.CreateUserController)
 	eUsersJwt.POST("/login", controllers.LoginUserController)
-	eUsersJwt.DELETE("/:id", controllers.DeleteUserController, mid.JWT([]byte(constants.SECRET_JWT)))
-	eUsersJwt.PUT("/:id", controllers.UpdateUserController, mid.JWT([]byte(constants.SECRET_JWT)))
+	eUsersJwt.DELETE("/:id", controllers.DeleteUserController, m.JWT([]byte(constants.SECRET_JWT)))
+	eUsersJwt.PUT("/:id", controllers.UpdateUserController, m.JWT([]byte(constants.SECRET_JWT)))
 
 	eBooksJwt := e.Group("/books")
-	eBooksJwt.Use(mid.JWT([]byte(constants.SECRET_JWT)))
+	eBooksJwt.Use(m.JWT([]byte(constants.SECRET_JWT)))
 	eBooksJwt.GET("", controllers.GetBooksController)
 	eBooksJwt.GET("/:id", controllers.GetBookController)
 	eBooksJwt.POST("", controllers.CreateBookController)
