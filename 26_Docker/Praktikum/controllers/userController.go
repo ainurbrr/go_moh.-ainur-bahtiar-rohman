@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"praktikum/config"
+	"praktikum/middlewares"
 	"praktikum/models"
 	"praktikum/utils"
-	"praktikum/middlewares"
 
 	"github.com/labstack/echo/v4"
 )
@@ -104,7 +104,7 @@ func UpdateUserController(c echo.Context) error {
 	})
 }
 
-func LoginUserController(c echo.Context) error{
+func LoginUserController(c echo.Context) error {
 	user := models.User{}
 	c.Bind(&user)
 
@@ -112,7 +112,7 @@ func LoginUserController(c echo.Context) error{
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"message": "login failed user not found",
-			"error": err.Error(),
+			"error":   err.Error(),
 		})
 	}
 
@@ -120,7 +120,7 @@ func LoginUserController(c echo.Context) error{
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]interface{}{
 			"message": "login failed",
-			"error": err.Error(),
+			"error":   err.Error(),
 		})
 	}
 
